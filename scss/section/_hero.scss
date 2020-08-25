@@ -1,0 +1,45 @@
+.hero {
+  width: 100vw;
+  height: rem(480);
+  background-image: url(../../img/key.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &__logo {
+    width: rem(100);
+    height: rem(100);
+  }
+
+  &__txt {
+    display: inline-block;
+    position: absolute;
+    top: 180px;
+    left: 100px;
+    line-height: 1.6em;
+    font-size: rem(36);
+    color: $accentFont-color;
+  }
+
+  &__text--bgblack {
+    background-color: #000;
+  }
+}
+
+.sele-icon {
+  position: absolute;
+  bottom: rem(20);
+  right: rem(20);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(180);
+  height: rem(180);
+  text-align: center;
+  font-size: rem(24);
+  color: $accent-color;
+  background-color: #fff;
+  border: 5px solid $accent-color;
+  border-radius: 50%;
+}

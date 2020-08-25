@@ -1,33 +1,116 @@
+@charset "UTF-8";
 /* base */
 /* --------------------------------- */
+body {
+  line-height: calc(28 / 16);
+  color: #333333;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;
+}
+
 img {
   width: 100%;
   height: auto;
   vertical-align: bottom;
 }
 
-/* title */
+/* module（共通アイテム） */
 /* --------------------------------- */
+/* title */
 .m-ttl {
+  position: relative;
+  display: inline-block;
+  padding: 0 1.25rem;
+  text-align: center;
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: 800;
+}
+
+.m-ttl::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 16px 16px 0 0;
+  border-color: #008DD5 transparent transparent transparent;
+}
+
+.m-ttl::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 16px 16px;
+  border-color: transparent transparent #008DD5 transparent;
 }
 
 /* btn */
-/* --------------------------------- */
 .m-btn {
   display: block;
-  color: #fff;
-  background-color: #000000;
 }
 
-/* utility */
+/* utility（便利スタイル） */
 /* --------------------------------- */
 .u-wrap {
-  width: 1080px;
+  width: 100%;
+  max-width: 62.5rem;
   margin: 0 auto;
+  padding: 0 0.9375rem;
 }
 
-.u-ptb-m {
-  padding: 80px 0;
+@media screen and (min-width: 1000px) {
+  .u-wrap {
+    padding: 0 1rem;
+  }
+}
+
+.hero {
+  width: 100vw;
+  height: 30rem;
+  background-image: url(../../img/key.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero__logo {
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.hero__txt {
+  display: inline-block;
+  position: absolute;
+  top: 180px;
+  left: 100px;
+  line-height: 1.6em;
+  font-size: 2.25rem;
+  color: #fff;
+}
+
+.hero__text--bgblack {
+  background-color: #000;
+}
+
+.sele-icon {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 11.25rem;
+  height: 11.25rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #008DD5;
+  background-color: #fff;
+  border: 5px solid #008DD5;
+  border-radius: 50%;
 }

@@ -2,13 +2,14 @@
 // 基本テキストカラー
 $baseFont-color: #333333;
 // 装飾フォントカラー
-$whiteFont-color: #fff;
+$accentFont-color: #fff;
 
+//・・・・・・・ アクセントカラー ・・・・・・・
+$accent-color: #008DD5;
 
 //・・・・・・・ 背景 ・・・・・・・
-$bg-color: #F0F0F0;
-//フッター背景
-$footer-color: #525252;
+$bg-color: #E6F6FF;
+
 // オーバーレイ
 $overray-color: rgba(#222222, .6);
 
@@ -20,10 +21,6 @@ $hamburgerIcon-color: #fff;
 $hamburgerFont-color: #fff;
 // ハンバーガーメニュー背景
 $hamburgerBg-color: rgba(#222222, .95);
-
-
-//・・・・・・・ ボタン ・・・・・・・
-$btn-color: #000000;
 
 
 //・・・・・・・ フォントファミリー ・・・・・・・
@@ -59,4 +56,4 @@ sans-serif;
 $baseFontsize: 16;
 
 //・・・・・・・ ブレイクポイント ・・・・・・・
-$mq-breakpoints: ('xs': 320px, 'sp': 480px, 'tab': 600px, 'pc' : 1025px, 'full': 1100px);
+$mq-breakpoints: ('xs': 320px, 'sp': 480px, 'tab': 600px, 'full': 1000px);

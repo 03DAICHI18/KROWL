@@ -3,7 +3,8 @@
 /* base */
 /* --------------------------------- */
 body {
-  // line-height: ;
+  line-height: calc(28 / 16);
+  color: $baseFont-color;
   font-family: $fontFamily;
 }
 
