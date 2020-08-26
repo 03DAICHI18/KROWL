@@ -6,6 +6,8 @@
   background-color: $bg-color;
 
   &__inner {
+    width: 100%;
+    margin: 0 auto;
     padding: rem(60);
     background-color: #fff;
 
@@ -49,6 +51,125 @@
       }
     }
   }
+}
 
+// レスポンシブ 
+@include mq(full) {
+  .service {
+    padding: rem(100) rem(60);
 
+    &__inner {
+      .service__contents {
+        .service__icon-wrap {
+          width: rem(400);
+
+          .service__icon-contents {
+            .service__icon-list {
+              margin: 0 rem(20) rem(20) 0;
+            }
+
+            .service__icon-list:nth-of-type(4) {
+              margin-left: rem(40);
+            }
+
+            .service__icon-list:nth-of-type(6) {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mq(pc) {
+  .service {
+    padding: rem(100) rem(60);
+
+    &__inner {
+      padding: rem(30);
+
+      .service__contents {
+        display: flex;
+        flex-direction: column;
+
+        .service__text-wrap {
+          width: 100%;
+        }
+
+        .service__icon-wrap {
+          width: 100%;
+
+          .service__icon-contents {
+            display: flex;
+            justify-content: space-between;
+            max-width: rem(470);
+            margin: 0 auto;
+
+            .service__icon-list {
+              margin: rem(30) rem(30) rem(10);
+            }
+
+            .service__icon-list:nth-of-type(4) {
+              margin-left: rem(30);
+            }
+
+            .service__icon-list:nth-of-type(6) {
+              margin-right: rem(30);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mq(tab) {
+  .service {
+    padding: rem(50) rem(20);
+
+    &__inner {
+      .service__contents {
+        .service__icon-wrap {
+          .service__icon-contents {
+            .service__icon-list {
+              margin: rem(30) rem(30) rem(10);
+            }
+
+            .service__icon-list:nth-of-type(4) {
+              margin-left: rem(30);
+            }
+
+            .service__icon-list:nth-of-type(6) {
+              margin-right: rem(30);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mq(sp) {
+  .service {
+    &__inner {
+      .service__contents {
+        .service__icon-wrap {
+          .service__icon-contents {
+            .service__icon-list {
+              margin: rem(30) rem(10) rem(10);
+            }
+
+            .service__icon-list:nth-of-type(4) {
+              margin-left: rem(10);
+            }
+
+            .service__icon-list:nth-of-type(6) {
+              margin-right: rem(10);
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -60,7 +60,8 @@ img {
 .m-btn {
   position: relative;
   display: block;
-  width: 17.5rem;
+  width: 100%;
+  max-width: 17.5rem;
   height: 3.75rem;
   line-height: 3.75rem;
   text-align: center;
@@ -94,6 +95,14 @@ img {
   .u-wrap {
     padding: 0 1rem;
   }
+}
+
+/* hover */
+.list-hover {
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: .6;
+  cursor: pointer;
 }
 
 /************ hero ***********/
@@ -143,7 +152,41 @@ img {
   border-radius: 50%;
 }
 
+@media screen and (max-width: 600px) {
+  .hero__logo {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
+  .hero__txt {
+    top: 150px;
+    left: 10px;
+    font-size: 1.6875rem;
+  }
+  .hero .sele-icon {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8.125rem;
+    height: 8.125rem;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #008DD5;
+    background-color: #fff;
+    border: 5px solid #008DD5;
+    border-radius: 50%;
+  }
+}
+
 /************ header ***********/
+#header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 .header {
   width: 100vw;
   height: 4.75rem;
@@ -159,13 +202,15 @@ img {
   font-weight: bold;
 }
 
-.header__list {
+.header .header__gnav .header__list {
   display: inline-block;
+  padding: 0 0.625rem;
   margin-right: 3.125rem;
   text-align: center;
+  transition: .4s;
 }
 
-.header__list:last-child {
+.header .header__gnav .header__list:last-child {
   display: inline-block;
   width: 11.875rem;
   margin-left: auto;
@@ -173,9 +218,129 @@ img {
   background-color: #A9D92F;
 }
 
+@media screen and (max-width: 1000px) {
+  .header {
+    /**************** 以下、メニューのスタイリング ****************/
+    /***** メニューオープン時位置0にして画面内に *****/
+  }
+  .header .header__gnav {
+    position: fixed;
+    /* メニューの位置マイナス指定で画面外に */
+    top: -30rem;
+    left: -6.25rem;
+    width: 100vw;
+    height: 30rem;
+    /* メニューを縦に */
+    display: flex;
+    flex-direction: column;
+    color: #efefef;
+    transition: .3s;
+  }
+  .header .header__gnav .header__list {
+    width: 100%;
+    height: 100%;
+    /* メニューテキスト位置をリスト内中心に */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .header .header__gnav .header__list:last-child {
+    display: flex;
+    width: 100%;
+    margin-left: 0;
+    background-color: rgba(169, 217, 47, 0.9);
+  }
+  .header .header__gnav.open {
+    position: fixed;
+    top: 0;
+  }
+}
+
+/**************** 以下、ハンバーガーボタンのスタイリング ****************/
+.btn {
+  /* ボタンの配置位置  */
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  /* ボタンの大きさ  */
+  width: 48px;
+  height: 48px;
+  /* バーガーの線をボタン範囲の中心に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 最前面に */
+  z-index: 10;
+}
+
+/***** 真ん中のバーガー線 *****/
+.btn-line {
+  /* 線の長さと高さ */
+  width: 100%;
+  height: 4px;
+  /* バーガー線の色 */
+  background-color: #fff;
+  /* バーガー線の位置基準として設定 */
+  position: relative;
+  transition: .2s;
+}
+
+/***** 上下のバーガー線 *****/
+.btn-line::before,
+.btn-line::after {
+  content: "";
+  /* 基準線と同じ大きさと色 */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: .5s;
+}
+
+.btn-line::before {
+  /* 上の線の位置 */
+  transform: translateY(-16px);
+}
+
+.btn-line::after {
+  /* 下の線の位置 */
+  transform: translateY(16px);
+}
+
+/***** メニューオープン時 *****/
+.btn-line.open {
+  /* 真ん中の線を透明に */
+  background-color: transparent;
+}
+
+.btn-line.open::before,
+.btn-line.open::after {
+  content: "";
+  transition: .2s;
+}
+
+.btn-line.open::before {
+  /* 上の線を傾ける */
+  transform: rotate(45deg);
+}
+
+.btn-line.open::after {
+  /* 上の線を傾ける */
+  transform: rotate(-45deg);
+}
+
+/* 600px以上はハンバーガーボタン非表示、ヘッダー固定 */
+@media screen and (min-width: 1001px) {
+  .btn {
+    display: none;
+  }
+}
+
 /************ info ***********/
 .info {
-  width: 40rem;
+  max-width: 40rem;
   margin: 6.25rem auto;
 }
 
@@ -211,6 +376,8 @@ img {
 }
 
 .service__inner {
+  width: 100%;
+  margin: 0 auto;
   padding: 3.75rem;
   background-color: #fff;
 }
@@ -255,6 +422,85 @@ img {
   margin-right: 0;
 }
 
+@media screen and (max-width: 1200px) {
+  .service {
+    padding: 6.25rem 3.75rem;
+  }
+  .service__inner .service__contents .service__icon-wrap {
+    width: 25rem;
+  }
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents .service__icon-list {
+    margin: 0 1.25rem 1.25rem 0;
+  }
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents .service__icon-list:nth-of-type(4) {
+    margin-left: 2.5rem;
+  }
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents .service__icon-list:nth-of-type(6) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .service {
+    padding: 6.25rem 3.75rem;
+  }
+  .service__inner {
+    padding: 1.875rem;
+  }
+  .service__inner .service__contents {
+    display: flex;
+    flex-direction: column;
+  }
+  .service__inner .service__contents .service__text-wrap {
+    width: 100%;
+  }
+  .service__inner .service__contents .service__icon-wrap {
+    width: 100%;
+  }
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents {
+    display: flex;
+    justify-content: space-between;
+    max-width: 29.375rem;
+    margin: 0 auto;
+  }
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents .service__icon-list {
+    margin: 1.875rem 1.875rem 0.625rem;
+  }
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents .service__icon-list:nth-of-type(4) {
+    margin-left: 1.875rem;
+  }
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents .service__icon-list:nth-of-type(6) {
+    margin-right: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .service {
+    padding: 3.125rem 1.25rem;
+  }
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents .service__icon-list {
+    margin: 1.875rem 1.875rem 0.625rem;
+  }
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents .service__icon-list:nth-of-type(4) {
+    margin-left: 1.875rem;
+  }
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents .service__icon-list:nth-of-type(6) {
+    margin-right: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents .service__icon-list {
+    margin: 1.875rem 0.625rem 0.625rem;
+  }
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents .service__icon-list:nth-of-type(4) {
+    margin-left: 0.625rem;
+  }
+  .service__inner .service__contents .service__icon-wrap .service__icon-contents .service__icon-list:nth-of-type(6) {
+    margin-right: 0.625rem;
+  }
+}
+
 /************ strong ***********/
 .strong {
   padding: 6.25rem;
@@ -291,17 +537,18 @@ img {
 
 .customer__inner {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  max-width: 62.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 62.5rem;
+  height: 96.875rem;
   margin: 0 auto;
   padding: 3.75rem;
-  height: 90.625rem;
   background-color: #fff;
 }
 
 .customer__inner .customer-card {
-  width: 40%;
+  width: 45%;
   border: 1px solid #ddd;
   border-radius: 10px;
 }
@@ -310,7 +557,7 @@ img {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 5.25rem;
+  height: 6.25rem;
   padding: 0 1.25rem;
   color: #fff;
   background-color: #008DD5;
@@ -320,17 +567,53 @@ img {
   padding: 1.25rem;
 }
 
-.customer__inner .customer-card:first-of-type {
-  margin: 0 5rem 5rem 0;
+@media screen and (max-width: 1200px) {
+  .customer {
+    padding: 6.25rem 3.75rem;
+  }
+  .customer__inner {
+    width: 95%;
+    padding: 3.75rem;
+  }
 }
 
-.customer__inner .customer-card:nth-of-type(3) {
-  margin-bottom: 5rem;
+@media screen and (max-width: 1000px) {
+  .customer__inner {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+  }
+  .customer__inner .customer-card {
+    width: 100%;
+    margin: 0 auto 3.75rem;
+  }
+  .customer__inner .customer-card .customer__img p {
+    height: 18.75rem;
+  }
+  .customer__inner .customer-card .customer__img p img {
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .customer {
+    padding: 3.125rem 1.25rem;
+  }
+  .customer__inner {
+    padding: 1.25rem;
+  }
+  .customer__inner .customer-card .customer__name {
+    height: 7.5rem;
+    padding: 0 0.625rem;
+  }
 }
 
 /************ contact ***********/
 .contact {
-  width: 37.5rem;
+  max-width: 37.5rem;
   margin: 0 auto;
   padding: 6.25rem 0;
 }
@@ -348,19 +631,23 @@ img {
   display: block;
 }
 
-.form {
-  width: 37.5rem;
+form {
+  width: 100%;
+}
+
+form .form {
+  width: 100%;
   height: 2.5rem;
   margin-bottom: 1.875rem;
   border: 1px solid #333;
   border-radius: 5px;
 }
 
-.form:last-of-type {
+form .form:last-of-type {
   margin-bottom: 3.125rem;
 }
 
-.pull {
+form .pull {
   position: relative;
   width: 12.5rem;
   margin-bottom: 1.875rem;
@@ -368,7 +655,7 @@ img {
   border-radius: 5px;
 }
 
-.pull::after {
+form .pull::after {
   content: "";
   display: block;
   position: absolute;
@@ -381,7 +668,7 @@ img {
   border-color: #333 transparent transparent transparent;
 }
 
-.textarea {
+form .textarea {
   height: 12.5rem;
 }
 

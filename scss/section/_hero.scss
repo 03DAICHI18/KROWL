@@ -44,3 +44,36 @@
   border: 5px solid $accent-color;
   border-radius: 50%;
 }
+
+@include mq(tab) {
+  .hero {
+
+    &__logo {
+      width: rem(100);
+      height: rem(100);
+    }
+
+    &__txt {
+      top: 150px;
+      left: 10px;
+      font-size: rem(27);
+    }
+
+    .sele-icon {
+      position: absolute;
+      bottom: rem(20);
+      right: rem(20);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: rem(130);
+      height: rem(130);
+      text-align: center;
+      font-size: rem(20);
+      color: $accent-color;
+      background-color: #fff;
+      border: 5px solid $accent-color;
+      border-radius: 50%;
+    }
+  }
+}

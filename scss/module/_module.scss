@@ -44,7 +44,8 @@
 .m-btn {
   position: relative;
   display: block;
-  width: rem(280);
+  width: 100%;
+  max-width: rem(280);
   height: rem(60);
   line-height: rem(60);
   text-align: center;
@@ -79,4 +80,12 @@
   .u-wrap {
     padding: 0 rem(16);
   }
+}
+
+/* hover */
+.list-hover {
+  color: #333;
+  background-color: rgba($color: #fff, $alpha: .8);
+  opacity: .6;
+  cursor: pointer;
 }
