@@ -1,0 +1,25 @@
+/************ strong ***********/
+.strong {
+  padding: rem(100);
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(50);
+
+    .strong__list-img {
+      margin-right: rem(40);
+    }
+
+    .strong__list-txt {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .strong__list-ttl {
+        margin-bottom: rem(20);
+        border-bottom: 1px solid $accent-color;
+      }
+    }
+  }
+}

@@ -24,13 +24,7 @@ $hamburgerBg-color: rgba(#222222, .95);
 
 
 //・・・・・・・ フォントファミリー ・・・・・・・
-$fontFamily:-apple-system,
-BlinkMacSystemFont,
-Roboto,
-"Segoe UI",
-"Helvetica Neue",
-HelveticaNeue,
-YuGothic,
+$fontFamily: YuGothic,
 "Yu Gothic Medium",
 "Yu Gothic",
 Verdana,
@@ -38,13 +32,7 @@ Meiryo,
 sans-serif;
 
 //  太字：セクションタイトルなど（WinではSegoe UI semiboldを適用。Yu Gothic Medium→Yu Gothic）
-$ttl-fontFamily: -apple-system,
-BlinkMacSystemFont,
-Roboto,
-"Segoe UI semibold",
-"Helvetica Neue",
-HelveticaNeue,
-YuGothic,
+$ttl-fontFamily: YuGothic,
 "Yu Gothic",
 "Segoe UI",
 Verdana,
@@ -56,4 +44,4 @@ sans-serif;
 $baseFontsize: 16;
 
 //・・・・・・・ ブレイクポイント ・・・・・・・
-$mq-breakpoints: ('xs': 320px, 'sp': 480px, 'tab': 600px, 'full': 1000px);
+$mq-breakpoints: ('xs': 320px, 'sp': 480px, 'tab': 600px, 'pc': 600px, 'full': 1200px);

@@ -1,0 +1,29 @@
+/************ info ***********/
+.info {
+  width: rem(640);
+  margin: rem(100) auto;
+
+  &__list {
+    display: inline-flex;
+    justify-content: flex-start;
+    margin-bottom: rem(20);
+  }
+
+  &__list:last-of-type {
+    margin-bottom: rem(50);
+  }
+
+  &__list-time {
+    width: rem(220);
+  }
+
+  &__list-txt {
+    width: 100%;
+  }
+
+  .info__link {
+    text-align: center;
+    color: $accent-color;
+  }
+
+}

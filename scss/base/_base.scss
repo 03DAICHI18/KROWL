@@ -6,6 +6,7 @@ body {
   line-height: calc(28 / 16);
   color: $baseFont-color;
   font-family: $fontFamily;
+  overflow-x: hidden;
 }
 
 img {

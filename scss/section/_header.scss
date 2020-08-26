@@ -1,0 +1,29 @@
+/************ header ***********/
+.header {
+  width: 100vw;
+  height: rem(76);
+  line-height: rem(76);
+  background-color: $accent-color;
+  box-shadow: 0 3px 30px -15px rgba(0, 0, 0, 0.8);
+
+  .header__gnav {
+    display: flex;
+    margin-left: rem(100);
+    color: $accentFont-color;
+    font-weight: bold;
+  }
+
+  &__list {
+    display: inline-block;
+    margin-right: rem(50);
+    text-align: center;
+  }
+
+  &__list:last-child {
+    display: inline-block;
+    width: rem(190);
+    margin-left: auto;
+    margin-right: 0;
+    background-color: #A9D92F;
+  }
+}

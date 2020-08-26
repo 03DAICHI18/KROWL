@@ -1,0 +1,54 @@
+/************ service ***********/
+.service {
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
+  padding: rem(100);
+  background-color: $bg-color;
+
+  &__inner {
+    padding: rem(60);
+    background-color: #fff;
+
+    .service__contents {
+      display: flex;
+      justify-content: space-between;
+      max-width: rem(1000);
+      margin: 0 auto rem(40);
+
+      .service__text-wrap {
+        width: rem(460);
+        margin-right: rem(60);
+      }
+
+      .service__icon-wrap {
+        width: rem(360);
+
+        .service__icon-contents {
+          display: flex;
+          flex-wrap: wrap;
+
+          .service__icon-list {
+            width: rem(80);
+            height: rem(80);
+            margin: 0 rem(40) rem(20) 0;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .service__icon-list:nth-of-type(4) {
+            margin-left: rem(40);
+          }
+
+          .service__icon-list:nth-of-type(6) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+
+}

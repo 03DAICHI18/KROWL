@@ -1,0 +1,26 @@
+/************ footer ***********/
+.footer {
+  width: 100vw;
+  height: 100%;
+  margin: 0 calc(50% - 50vw);
+  padding: rem(50) rem(100);
+  color: #fff;
+  background-color: $accent-color;
+
+  &__gnav {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .footer__list-child:first-of-type {
+    margin-bottom: rem(40);
+    font-weight: bold;
+  }
+
+  .footer__list-child:nth-of-type(n+2) {
+    font-size: rem(14);
+    margin-bottom: rem(20);
+  }
+
+}
