@@ -145,6 +145,7 @@ a:hover {
 .hero__logo {
   width: 6.25rem;
   height: 6.25rem;
+  z-index: 100;
 }
 
 .hero__txt {
@@ -247,6 +248,8 @@ a:hover {
 
 @media screen and (max-width: 1000px) {
   .header {
+    height: 3.125rem;
+    line-height: 3.125rem;
     /**************** 以下、メニューのスタイリング ****************/
     /***** メニューオープン時位置0にして画面内に *****/
   }
@@ -289,11 +292,11 @@ a:hover {
 .btn {
   /* ボタンの配置位置  */
   position: absolute;
-  top: 16px;
+  top: 12px;
   right: 16px;
   /* ボタンの大きさ  */
-  width: 48px;
-  height: 48px;
+  width: 2.5rem;
+  height: 1.75rem;
   /* バーガーの線をボタン範囲の中心に配置 */
   display: flex;
   justify-content: center;
@@ -746,7 +749,7 @@ form .textarea {
 
 @media screen and (max-width: 1000px) {
   .footer {
-    padding: 3.125rem 1.25rem 1.25rem;
+    padding: 3.125rem 1.25rem;
   }
 }
 
