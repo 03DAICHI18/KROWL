@@ -238,6 +238,10 @@ a:hover {
   transition: .4s;
 }
 
+.header .header__gnav .header__list a {
+  display: block;
+}
+
 .header .header__gnav .header__list:last-child {
   display: inline-block;
   width: 11.875rem;

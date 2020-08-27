@@ -25,6 +25,10 @@
       margin-right: rem(50);
       text-align: center;
       transition: .4s;
+
+      a {
+        display: block;
+      }
     }
 
     .header__list:last-child {
