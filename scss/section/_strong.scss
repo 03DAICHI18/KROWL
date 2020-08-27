@@ -23,3 +23,24 @@
     }
   }
 }
+
+/* レスポンシブ  */
+@media screen and (max-width: 780px) {
+  .strong {
+    padding: rem(50) rem(20);
+  }
+}
+
+@include mq(tab) {
+  .strong {
+    &__list {
+      display: block;
+      margin-bottom: rem(50);
+
+      .strong__list-img {
+        width: 50%;
+        margin: 0 auto rem(20);
+      }
+    }
+  }
+}

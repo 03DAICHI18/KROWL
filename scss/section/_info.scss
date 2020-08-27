@@ -24,6 +24,11 @@
   .info__link {
     text-align: center;
     color: $accent-color;
+    cursor: pointer;
+  }
+
+  .info__link:hover {
+    text-decoration: underline;
   }
 
 }

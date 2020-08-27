@@ -13,7 +13,7 @@
 
   }
 
-  .footer__list-child:first-of-type {
+  .footer__list-ttl {
     margin-bottom: rem(40);
     font-weight: bold;
   }
@@ -22,5 +22,46 @@
     font-size: rem(14);
     margin-bottom: rem(20);
   }
+}
 
+@include mq(pc) {
+  .footer {
+    padding: rem(50) rem(20) rem(20);
+  }
+}
+
+@include mq(tab) {
+  .footer {
+    &__gnav {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      .footer__list:not(:last-of-type) {
+        border-bottom: 1px solid #fff;
+      }
+
+      .footer__list ul {
+        margin: rem(10) 0;
+
+        .footer__list-child {
+          margin-bottom: 0;
+        }
+
+        .footer__list-ttl {
+          text-align: left;
+          margin-bottom: rem(10);
+        }
+
+        .footer__list-child:nth-of-type(n+2) {
+          font-size: rem(14);
+          margin-bottom: 0;
+        }
+      }
+
+      .footer__list ul:last-of-type {
+        padding-bottom: rem(20);
+      }
+    }
+  }
 }

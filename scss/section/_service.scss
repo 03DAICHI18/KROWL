@@ -84,8 +84,6 @@
 
 @include mq(pc) {
   .service {
-    padding: rem(100) rem(60);
-
     &__inner {
       padding: rem(30);
 
