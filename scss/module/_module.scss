@@ -92,6 +92,14 @@
   cursor: pointer;
 }
 
+@include mq(pc) {
+  .header__list.hover {
+    color: #333;
+    opacity: .8;
+  }
+
+}
+
 // btn
 .m-btn::before {
   content: "";
